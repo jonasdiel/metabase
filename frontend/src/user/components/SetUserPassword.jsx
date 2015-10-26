@@ -57,7 +57,7 @@ export default class SetUserPassword extends Component {
 
         // make sure new passwords match
         if (React.findDOMNode(this.refs.password).value !== React.findDOMNode(this.refs.password2).value) {
-            formErrors.data.errors.password2 = "Passwords do not match";
+            formErrors.data.errors.password2 = "As senhas não conferem";
         }
 
         if (_.keys(formErrors.data.errors).length > 0) {
@@ -87,27 +87,27 @@ export default class SetUserPassword extends Component {
             <div>
                 <form className="Form-new bordered rounded shadowed" onSubmit={this.formSubmitted.bind(this)} novalidate>
                     <FormField fieldName="old_password" formError={formError}>
-                        <FormLabel title="Current password" fieldName="old_password" formError={formError}></FormLabel>
+                        <FormLabel title="Senha atual" fieldName="old_password" formError={formError}></FormLabel>
                         <input ref="oldPassword" type="password" className="Form-input Form-offset full" name="old_password" placeholder="Shhh..." onChange={this.onChange.bind(this)} autoFocus={true} required />
                         <span className="Form-charm"></span>
                     </FormField>
 
                     <FormField fieldName="password" formError={formError}>
-                        <FormLabel title="New password" fieldName="password" formError={formError} ></FormLabel>
+                        <FormLabel title="Nova senha" fieldName="password" formError={formError} ></FormLabel>
                         <span style={{fontWeight: "400"}} className="Form-label Form-offset">{passwordComplexity}</span>
-                        <input ref="password" type="password" className="Form-input Form-offset full" name="password" placeholder="Make sure its secure like the instructions above" onChange={this.onChange.bind(this)} required />
+                        <input ref="password" type="password" className="Form-input Form-offset full" name="password" placeholder="Certifique-se que é segura" onChange={this.onChange.bind(this)} required />
                         <span className="Form-charm"></span>
                     </FormField>
 
                     <FormField fieldName="password2" formError={formError}>
-                        <FormLabel title="Confirm new password" fieldName="password2" formError={formError} ></FormLabel>
-                        <input ref="password2" type="password" className="Form-input Form-offset full" name="password" placeholder="Make sure it matches the one you just entered" required onChange={this.onChange.bind(this)} />
+                        <FormLabel title="Confirme sua nova senha" fieldName="password2" formError={formError} ></FormLabel>
+                        <input ref="password2" type="password" className="Form-input Form-offset full" name="password" placeholder="Deve corresponder a senha anterior" required onChange={this.onChange.bind(this)} />
                         <span className="Form-charm"></span>
                     </FormField>
 
                     <div className="Form-actions">
                         <button className={cx("Button", {"Button--primary": valid})} disabled={!valid}>
-                            Save
+                            Salvar
                         </button>
                         <FormMessage formError={(updatePasswordResult && !updatePasswordResult.success && !formError) ? updatePasswordResult : undefined} formSuccess={(updatePasswordResult && updatePasswordResult.success) ? updatePasswordResult : undefined} />
                     </div>

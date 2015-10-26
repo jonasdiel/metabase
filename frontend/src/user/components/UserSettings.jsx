@@ -40,7 +40,7 @@ export default class UserSettings extends Component {
             <div>
                 <div className="py4 border-bottom">
                     <div className="wrapper wrapper--trim">
-                        <h2 className="text-grey-4">Account settings</h2>
+                        <h2 className="text-grey-4">Configurações da conta</h2>
                     </div>
                 </div>
                 <div className="mt2 md-mt4 wrapper wrapper--trim">
@@ -48,12 +48,12 @@ export default class UserSettings extends Component {
                         <div className="Grid-cell Grid Grid--fit md-flex-column md-Cell--1of3">
                             <a className={cx(tabClasses['details'])}
                                 onClick={this.onSetTab.bind(this, 'details')}>
-                                User Details
+                                Detalhes do usuário
                             </a>
 
                             <a className={cx(tabClasses['password'])}
                                 onClick={this.onSetTab.bind(this, 'password')}>
-                                Password
+                                Senha
                             </a>
                         </div>
                         <div className="Grid-cell">

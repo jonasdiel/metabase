@@ -8,7 +8,7 @@ var SettingsAdminControllers = angular.module('metabaseadmin.settings.controller
 
 // from common.clj
 var TIMEZONES = [
-    { name: "Database Default", value: "" },
+    { name: "Padrão do banco de dados", value: "" },
     "GMT",
     "UTC",
     "US/Alaska",
@@ -23,16 +23,16 @@ var TIMEZONES = [
 
 // temporary hardcoded metadata
 var EXTRA_SETTINGS_METADATA = {
-    "site-name":            { display_name: "Site Name",          section: "General", index: 0, type: "string" },
-    "-site-url":            { display_name: "Site URL",           section: "General", index: 1, type: "string" },
-    "report-timezone":      { display_name: "Report Timezone",    section: "General", index: 2, type: "select", options: TIMEZONES, placeholder: "Select a timezone" },
-    "anon-tracking-enabled":{ display_name: "Anonymous Tracking", section: "General", index: 3, type: "boolean" },
-    "email-smtp-host":      { display_name: "SMTP Host",          section: "Email",   index: 0, type: "string" },
-    "email-smtp-port":      { display_name: "SMTP Port",          section: "Email",   index: 1, type: "string" },
-    "email-smtp-security":  { display_name: "SMTP Security",      section: "Email",   index: 2, type: "radio", options: { none: "None", tls: "TLS", ssl: "SSL" } },
-    "email-smtp-username":  { display_name: "SMTP Username",      section: "Email",   index: 3, type: "string" },
-    "email-smtp-password":  { display_name: "SMTP Password",      section: "Email",   index: 4, type: "password" },
-    "email-from-address":   { display_name: "From Address",       section: "Email",   index: 5, type: "string" },
+    "site-name":            { display_name: "Nome do Site",          section: "Geral", index: 0, type: "string" },
+    "-site-url":            { display_name: "Endereço do site",           section: "Geral", index: 1, type: "string" },
+    "report-timezone":      { display_name: "Fuso horário de relatórios",    section: "Geral", index: 2, type: "select", options: TIMEZONES, placeholder: "Selecione um fuso horário" },
+    "anon-tracking-enabled":{ display_name: "Rastreamento anônio", section: "Geral", index: 3, type: "boolean" },
+    "email-smtp-host":      { display_name: "Endereço SMTP",          section: "E-mail",   index: 0, type: "string" },
+    "email-smtp-port":      { display_name: "Porta SMTP",          section: "E-mail",   index: 1, type: "string" },
+    "email-smtp-security":  { display_name: "Segurança SMTP",      section: "E-mail",   index: 2, type: "radio", options: { none: "Nenhuma", tls: "TLS", ssl: "SSL" } },
+    "email-smtp-username":  { display_name: "Usuário SMTP",      section: "E-mail",   index: 3, type: "string" },
+    "email-smtp-password":  { display_name: "Senha SMTP",      section: "E-mail",   index: 4, type: "password" },
+    "email-from-address":   { display_name: "E-mail do remetente",       section: "E-mail",   index: 5, type: "string" },
 };
 
 SettingsAdminControllers.controller('SettingsEditor', ['$scope', '$location', 'Settings', 'AppState', 'settings',

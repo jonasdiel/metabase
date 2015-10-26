@@ -140,10 +140,10 @@ export default class AdminPeople extends Component {
     renderAddPersonModal(modalDetails) {
         return (
             <Modal>
-                <ModalContent title="Add Person"
+                <ModalContent title="Adicionar pessoa"
                               closeFn={() => this.props.dispatch(showModal(null))}>
                     <EditUserForm
-                        buttonText="Add Person"
+                        buttonText="Adicionar pessoa"
                         submitFn={this.onAddPerson.bind(this)} />
                 </ModalContent>
             </Modal>
@@ -155,7 +155,7 @@ export default class AdminPeople extends Component {
 
         return (
             <Modal>
-                <ModalContent title="Edit Details"
+                <ModalContent title="Editar detalhes"
                               closeFn={() => this.props.dispatch(showModal(null))}>
                     <EditUserForm
                         user={user}
@@ -175,18 +175,18 @@ export default class AdminPeople extends Component {
                               className="Modal-content Modal-content--small NewForm">
                     <div>
                         <div className="px4 pb4">
-                            <div className="pb4">We couldn’t send them an email invitation,
-                            so make sure to tell them to log in using <span className="text-bold">{user.email} </span>
-                            and this password we’ve generated for them:</div>
+                            <div className="pb4">Não foi possível enviar o e-mail de convite,
+                            por isso certifique-se de avisar para fazer login usando <span className="text-bold">{user.email} </span>
+                            e esta senha geramos para ele:</div>
 
                             <PasswordReveal password={user.password} />
 
-                            <div style={{paddingLeft: "5em", paddingRight: "5em"}} className="pt4 text-centered">If you want to be able to send email invites, just go to the <a className="link text-bold" href="/admin/settings/?section=Email">Email Settings</a> page.</div>
+                            <div style={{paddingLeft: "5em", paddingRight: "5em"}} className="pt4 text-centered">Se você deseja habilitar o envio de convites por e-mail, vá para <a className="link text-bold" href="/admin/settings/?section=Email">Configurações de E-mail</a></div>
                         </div>
 
                         <div className="Form-actions">
-                            <button className="Button Button--primary" onClick={() => this.props.dispatch(showModal(null))}>Done</button>
-                            <span className="pl1">or<a className="link ml1 text-bold" href="" onClick={() => this.props.dispatch(showModal({type: MODAL_ADD_PERSON}))}>Add another person</a></span>
+                            <button className="Button Button--primary" onClick={() => this.props.dispatch(showModal(null))}>Feito</button>
+                            <span className="pl1">or<a className="link ml1 text-bold" href="" onClick={() => this.props.dispatch(showModal({type: MODAL_ADD_PERSON}))}>Adicionar outra pessoa</a></span>
                         </div>
                     </div>
                 </ModalContent>
@@ -203,11 +203,11 @@ export default class AdminPeople extends Component {
                               closeFn={() => this.props.dispatch(showModal(null))}
                               className="Modal-content Modal-content--small NewForm">
                     <div>
-                        <div style={{paddingLeft: "5em", paddingRight: "5em"}} className="pb4">We’ve sent an invite to <span className="text-bold">{user.email}</span> with instructions to set their password.</div>
+                        <div style={{paddingLeft: "5em", paddingRight: "5em"}} className="pb4">Enviamos um convite para <span className="text-bold">{user.email}</span> com instruções para definir sua senha.</div>
 
                         <div className="Form-actions">
-                            <button className="Button Button--primary" onClick={() => this.props.dispatch(showModal(null))}>Done</button>
-                            <span className="pl1">or<a className="link ml1 text-bold" href="" onClick={() => this.props.dispatch(showModal({type: MODAL_ADD_PERSON}))}>Add another person</a></span>
+                            <button className="Button Button--primary" onClick={() => this.props.dispatch(showModal(null))}>Feito</button>
+                            <span className="pl1">or<a className="link ml1 text-bold" href="" onClick={() => this.props.dispatch(showModal({type: MODAL_ADD_PERSON}))}>Adicionar outra pessoa</a></span>
                         </div>
                     </div>
                 </ModalContent>
@@ -224,10 +224,10 @@ export default class AdminPeople extends Component {
                               closeFn={() => this.props.dispatch(showModal(null))}
                               className="Modal-content Modal-content--small NewForm">
                     <div>
-                        <div className="px4 pb4">Any previous email invites they have will no longer work.</div>
+                        <div className="px4 pb4">Qualquer convite anteiror por e-mail poderá não mais funcionar.</div>
 
                         <div className="Form-actions">
-                            <button className="Button Button--primary mr2" onClick={() => this.props.dispatch(showModal(null))}>Okay</button>
+                            <button className="Button Button--primary mr2" onClick={() => this.props.dispatch(showModal(null))}>Certo</button>
                         </div>
                     </div>
                 </ModalContent>
@@ -245,12 +245,12 @@ export default class AdminPeople extends Component {
                               className="Modal-content Modal-content--small NewForm">
                     <div>
                         <div className="px4 pb4">
-                            Are you sure you want to do this? {user.first_name} won't be able to log in anymore.  This can't be undone.
+                            Você tem certeza de que quer fazer isso? {user.first_name} não será mais possível realizar o login. Isto não poderá mais ser desfeito.
                         </div>
 
                         <div className="Form-actions">
-                            <button className="Button Button--warning" onClick={() => this.onRemoveUserConfirm(user)}>Yes</button>
-                            <button className="Button Button--primary ml2" onClick={() => this.props.dispatch(showModal(null))}>No</button>
+                            <button className="Button Button--warning" onClick={() => this.onRemoveUserConfirm(user)}>Sim</button>
+                            <button className="Button Button--primary ml2" onClick={() => this.props.dispatch(showModal(null))}>Não</button>
                         </div>
                     </div>
                 </ModalContent>
@@ -263,17 +263,17 @@ export default class AdminPeople extends Component {
 
         return (
             <Modal className="Modal Modal--small">
-                <ModalContent title={"Reset "+user.first_name+"'s Password"}
+                <ModalContent title={"Resetar a senha de "+user.first_name}
                               closeFn={() => this.props.dispatch(showModal(null))}
                               className="Modal-content Modal-content--small NewForm">
                     <div>
                         <div className="px4 pb4">
-                            Are you sure you want to do this?
+                            Você tem certeza de que quer fazer isso?
                         </div>
 
                         <div className="Form-actions">
-                            <button className="Button Button--warning" onClick={() => this.onPasswordResetConfirm(user)}>Yes</button>
-                            <button className="Button Button--primary ml2" onClick={() => this.props.dispatch(showModal(null))}>No</button>
+                            <button className="Button Button--warning" onClick={() => this.onPasswordResetConfirm(user)}>Sim</button>
+                            <button className="Button Button--primary ml2" onClick={() => this.props.dispatch(showModal(null))}>Não</button>
                         </div>
                     </div>
                 </ModalContent>
@@ -286,18 +286,18 @@ export default class AdminPeople extends Component {
 
         return (
             <Modal className="Modal Modal--small">
-                <ModalContent title={user.first_name+"'s Password Has Been Reset"}
+                <ModalContent title={"A senha de "+user.first_name+"foi resetada com Sucesso!"}
                               closeFn={() => this.props.dispatch(showModal(null))}
                               className="Modal-content Modal-content--small NewForm">
                     <div>
                         <div className="px4 pb4">
-                            <span className="pb3 block">Here’s a temporary password they can use to log in and then change their password.</span>
+                            <span className="pb3 block">Aqui está uma senha temporária que pode ser utilizada para efetuar o login e, em seguida, altere sua senha.</span>
 
                             <PasswordReveal password={password} />
                         </div>
 
                         <div className="Form-actions">
-                            <button className="Button Button--primary mr2" onClick={() => this.props.dispatch(showModal(null))}>Done</button>
+                            <button className="Button Button--primary mr2" onClick={() => this.props.dispatch(showModal(null))}>Feito</button>
                         </div>
                     </div>
                 </ModalContent>
@@ -310,14 +310,14 @@ export default class AdminPeople extends Component {
 
         return (
             <Modal className="Modal Modal--small">
-                <ModalContent title={user.first_name+"'s Password Has Been Reset"}
+                <ModalContent title={"A senha de "+user.first_name+" foi resetada!"}
                               closeFn={() => this.props.dispatch(showModal(null))}
                               className="Modal-content Modal-content--small NewForm">
                     <div>
-                        <div className="px4 pb4">We've sent them an email with instructions for creating a new password.</div>
+                        <div className="px4 pb4">Enviamos um e-mail com instruções para criar uma nova senha.</div>
 
                         <div className="Form-actions">
-                            <button className="Button Button--primary mr2" onClick={() => this.props.dispatch(showModal(null))}>Done</button>
+                            <button className="Button Button--primary mr2" onClick={() => this.props.dispatch(showModal(null))}>Feito</button>
                         </div>
                     </div>
                 </ModalContent>
@@ -355,18 +355,18 @@ export default class AdminPeople extends Component {
                     { modal ? this.renderModal(modal.type, modal.details) : null }
 
                     <section className="PageHeader clearfix px2">
-                        <a className="Button Button--primary float-right" href="#" onClick={() => this.props.dispatch(showModal({type: MODAL_ADD_PERSON}))}>Add person</a>
-                        <h2 className="PageTitle">People</h2>
+                        <a className="Button Button--primary float-right" href="#" onClick={() => this.props.dispatch(showModal({type: MODAL_ADD_PERSON}))}>Adicionar pessoa</a>
+                        <h2 className="PageTitle">Pessoas</h2>
                     </section>
 
                     <section className="pb4">
                         <table className="ContentTable">
                             <thead style={{borderTop: "none"}}>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Role</th>
-                                    <th>Last Seen</th>
+                                    <th>Nome</th>
+                                    <th>E-mail</th>
+                                    <th>Função</th>
+                                    <th>Visto pela última vez</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -380,7 +380,7 @@ export default class AdminPeople extends Component {
                                             user={user}
                                             onChangeFn={this.onRoleChange.bind(this)} />
                                     </td>
-                                    <td>{ user.last_login ? user.last_login.fromNow() : "Never" }</td>
+                                    <td>{ user.last_login ? user.last_login.fromNow() : "Nunca" }</td>
                                     <td className="text-right">
                                         <UserActionsSelect user={user} dispatch={this.props.dispatch} />
                                     </td>

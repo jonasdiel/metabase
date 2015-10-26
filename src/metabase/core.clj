@@ -28,11 +28,11 @@
 
 ;; ## CONFIG
 
-(defsetting site-name "The name used for this instance of Metabase." "Metabase")
+(defsetting site-name "O nome utilizado para esta instância do Metabase." "Metabase")
 
-(defsetting -site-url "The base URL of this Metabase instance, e.g. \"http://metabase.my-company.com\"")
+(defsetting -site-url "O endereço desta instalação do Metabase, ex: \"http://metabase.minhaempresa.com\"")
 
-(defsetting anon-tracking-enabled "Enable the collection of anonymous usage data in order to help Metabase improve." "true")
+(defsetting anon-tracking-enabled "Ativar a coleta de dados de uso anônimos, a fim de ajudar a melhorar o Metabase." "true")
 
 (defn site-url
   "Fetch the site base URL that should be used for password reset emails, etc.
@@ -50,7 +50,7 @@
       (-site-url (or origin host))))
 
 (def app
-  "The primary entry point to the HTTP server"
+  "O principal ponto de entrada para o servidor HTTP"
   (-> routes/routes
       (mb-middleware/log-api-call :request :response)
       mb-middleware/add-security-headers              ; [METABASE] Add HTTP headers to API responses to prevent them from being cached
@@ -75,22 +75,22 @@
   (atom 0))
 
 (defn initialized?
-  "Metabase is initialized and ready to be served"
+  "Metabase está iniciado e pronto para servir"
   []
   (= @metabase-initialization-progress 1.0))
 
 (defn initialization-progress
-  "Get the current progress of the Metabase initialize"
+  "Obter o progresso atual da inicialização do Metabase"
   []
   @metabase-initialization-progress)
 
 (defn initialization-complete!
-  "Complete the Metabase initialization by setting its progress to 100%"
+  "Inicialização do Metabase completa, definindo seu progresso a 100%"
   []
   (reset! metabase-initialization-progress 1.0))
 
 (defn- -init-create-setup-token
-  "Create and set a new setup token, and open the setup URL on the user's system."
+  "Criar e definir um novo token de configuração, e abrir a URL de configuração no sistema do usuário."
   []
   (let [setup-token (setup/token-create)                    ; we need this here to create the initial token
         hostname    (or (config/config-str :mb-jetty-host) "localhost")
@@ -99,7 +99,7 @@
                          (or hostname "localhost")
                          (when-not (= 80 port) (str ":" port))
                          "/setup/")]
-    (log/info (color/green "Please use the following url to setup your Metabase installation:\n\n"
+    (log/info (color/green "Por favor utilize a seguinte url para configurar a sua instalação do Metabase:\n\n"
                            setup-url
                            "\n\n"))))
 

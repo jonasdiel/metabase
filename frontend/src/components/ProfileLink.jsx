@@ -71,14 +71,14 @@ export default class ProfileLink extends Component {
                             <ul className="NavDropdown-content-layer">
                                 <li>
                                     <a onClick={this.closeDropdown} className="Dropdown-item block text-white no-decoration" href="/user/edit_current">
-                                        Account Settings
+                                        Configurações da conta
                                     </a>
                                 </li>
 
                                 { user.is_superuser && context !== 'admin' ?
                                     <li>
                                         <a onClick={this.closeDropdown} className="Dropdown-item block text-white no-decoration" href="/admin/">
-                                            Admin Panel
+                                            Painel administrativo
                                         </a>
                                     </li>
                                 : null }
@@ -86,25 +86,25 @@ export default class ProfileLink extends Component {
                                 { user.is_superuser && context === 'admin' ?
                                     <li>
                                         <a onClick={this.closeDropdown} className="Dropdown-item block text-white no-decoration" href="/">
-                                            Exit Admin
+                                            Fechar Administração
                                         </a>
                                     </li>
                                 : null }
 
                                 <li>
                                     <a className="Dropdown-item block text-white no-decoration" href={"http://www.metabase.com/docs/"+tag} target="_blank">
-                                        Help
+                                        Ajuda
                                     </a>
                                 </li>
 
                                 <li>
                                     <a onClick={this.openModal} className="Dropdown-item block text-white no-decoration">
-                                        About Metabase
+                                        Sobre o Metabase
                                     </a>
                                 </li>
 
                                 <li className="border-top border-light">
-                                    <a className="Dropdown-item block text-white no-decoration" href="/auth/logout">Logout</a>
+                                    <a className="Dropdown-item block text-white no-decoration" href="/auth/logout">Sair</a>
                                 </li>
                             </ul>
                         </div>
@@ -119,15 +119,15 @@ export default class ProfileLink extends Component {
                                 <div className="text-brand pb2">
                                     <LogoIcon width={48} height={48} />
                                 </div>
-                                <h2 style={{fontSize: "1.75em"}} className="text-dark">Thanks for using Metabase!</h2>
+                                <h2 style={{fontSize: "1.75em"}} className="text-dark">Obrigado por utilizar o Metabase!</h2>
                                 <p className="pt2">
-                                    <h3 className="text-dark">You're on version {tag}</h3>
-                                    <span className="text-grey-3 text-bold">built on {date}</span>
+                                    <h3 className="text-dark">Você está na versão {tag}</h3>
+                                    <span className="text-grey-3 text-bold">construída em {date}</span>
                                 </p>
                             </div>
                             <div style={{borderWidth: "2px"}} className="p2 h5 text-centered text-grey-3 border-top">
-                                <span className="block"><span className="text-bold">Metabase</span> is a Trademark of Metabase, Inc</span>
-                                <span>and is built with care in San Francisco, CA</span>
+                                <span className="block"><span className="text-bold">Metabase</span> é uma marca comercial da Metabase, Inc</span>
+                                <span>e é construído com cuidado em San Francisco, CA</span>
                             </div>
                         </Modal>
                     : null }

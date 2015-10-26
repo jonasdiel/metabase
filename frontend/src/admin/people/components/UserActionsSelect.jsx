@@ -46,15 +46,15 @@ export default class UserActionsSelect extends Component {
                                 className="block"
                                 triggerElement={<span className="text-grey-1"><Icon name={'ellipsis'}></Icon></span>}>
                 <ul className="UserActionsSelect">
-                    <li className="py1 px2 bg-brand-hover text-white-hover cursor-pointer" onClick={this.onEditDetails.bind(this)}>Edit Details</li>
+                    <li className="py1 px2 bg-brand-hover text-white-hover cursor-pointer" onClick={this.onEditDetails.bind(this)}>Editar detalhes</li>
 
                     { (user.last_login === null && MetabaseSettings.isEmailConfigured()) ?
-                        <li className="py1 px2 bg-brand-hover text-white-hover cursor-pointer" onClick={this.onResendInvite.bind(this)}>Re-send Invite</li>
+                        <li className="py1 px2 bg-brand-hover text-white-hover cursor-pointer" onClick={this.onResendInvite.bind(this)}>Reenviar convite</li>
                     :
-                        <li className="py1 px2 bg-brand-hover text-white-hover cursor-pointer" onClick={this.onResetPassword.bind(this)}>Reset Password</li>
+                        <li className="py1 px2 bg-brand-hover text-white-hover cursor-pointer" onClick={this.onResetPassword.bind(this)}>Resetar senha</li>
                     }
 
-                    <li className="mt1 p2 border-top bg-error-hover text-error text-white-hover cursor-pointer"  onClick={this.onRemoveUser.bind(this)}>Remove</li>
+                    <li className="mt1 p2 border-top bg-error-hover text-error text-white-hover cursor-pointer"  onClick={this.onRemoveUser.bind(this)}>Remover</li>
                 </ul>
             </PopoverWithTrigger>
         );

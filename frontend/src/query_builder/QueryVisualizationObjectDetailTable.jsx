@@ -182,7 +182,7 @@ export default class QueryVisualizationObjectDetailTable extends Component {
             return false;
         }
 
-        var tableName = (this.props.tableMetadata) ? singularize(this.props.tableMetadata.display_name) : "Unknown",
+        var tableName = (this.props.tableMetadata) ? singularize(this.props.tableMetadata.display_name) : "Desconhecido",
             // TODO: once we nail down the "title" column of each table this should be something other than the id
             idValue = this.getIdValue();
 
@@ -199,7 +199,7 @@ export default class QueryVisualizationObjectDetailTable extends Component {
                         <div className="p4 flex align-center text-bold text-grey-3">
                             <Icon name="connections" width="17px" height="20px" />
                             <div className="ml2">
-                                This <span className="text-dark">{tableName}</span> is connected to.
+                                Este <span className="text-dark">{tableName}</span> está conectado a.
                             </div>
                         </div>
                     </div>
