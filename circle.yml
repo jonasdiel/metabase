@@ -28,4 +28,4 @@ deployment:
   master:
     branch: master
     commands:
-      - ./bin/deploy-webhook $DEPLOY_WEBHOOK
+      - ./bin/deploy-webhook http://localhost:3000
