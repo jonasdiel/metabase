@@ -27,5 +27,5 @@ test:
 deployment:
   master:
     branch: master
-    commands:
-      - ./bin/deploy-webhook http://localhost:3000
+#    commands:
+#      - ./bin/deploy-webhook $DEPLOY_WEBHOOK
