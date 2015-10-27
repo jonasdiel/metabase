@@ -30,7 +30,7 @@
   (client :post 400 "session" (user->credentials :trashbird)))
 
 ;; Test for password checking
-(expect {:errors {:password "não coincide com a senha armazenada"}}
+(expect {:errors {:password "não coincide com a senha armazenada."}}
   (client :post 400 "session" (-> (user->credentials :rasta)
                                   (assoc :password "something else"))))
 
