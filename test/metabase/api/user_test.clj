@@ -232,7 +232,7 @@
                                                                                          :old_password (:old password)})
       ;; Old creds should no longer work
       (assert (= (metabase.http-client/client :post 400 "session" (:old creds))
-                {:errors {:password "did not match stored password"}}))
+                {:errors {:password "não coincide com a senha armazenada."}}))
       ;; New creds *should* work
       (metabase.http-client/client :post 200 "session" (:new creds)))))
 

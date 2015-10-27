@@ -26,11 +26,11 @@
 
 ;; Test for inactive user (user shouldn't be able to login if :is_active = false)
 ;; Return same error as incorrect password to avoid leaking existence of user
-(expect {:errors {:password "A senha não coincide com a senha armazenada."}}
+(expect {:errors {:password "não coincide com a senha armazenada."}}
   (client :post 400 "session" (user->credentials :trashbird)))
 
 ;; Test for password checking
-(expect {:errors {:password "did not match stored password"}}
+(expect {:errors {:password "não coincide com a senha armazenada"}}
   (client :post 400 "session" (-> (user->credentials :rasta)
                                   (assoc :password "something else"))))
 
@@ -104,7 +104,7 @@
                                                 :password (:new password)})
     ;; Old creds should no longer work
     (assert (= (client :post 400 "session" (:old creds))
-              {:errors {:password "did not match stored password"}}))
+              {:errors {:password "não coincide com a senha armazenada."}}))
     ;; New creds *should* work
     (client :post 200 "session" (:new creds))
     ;; Double check that reset token was cleared
