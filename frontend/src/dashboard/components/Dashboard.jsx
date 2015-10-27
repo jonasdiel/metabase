@@ -46,8 +46,8 @@ export default class Dashboard extends Component {
                         { dashboard.ordered_cards.length === 0 ?
                             <div className="flex flex-column layout-centered">
                                 <span className="QuestionCircle">?</span>
-                                <div className="text-normal mt3 mb1">This dashboard is looking empty.</div>
-                                <div className="text-normal text-grey-2">Add a question to start making it useful!</div>
+                                <div className="text-normal mt3 mb1">Esta painel está vazio.</div>
+                                <div className="text-normal text-grey-2">Adicione uma pergunta para deixá-lo útil!</div>
                             </div>
                         :
                             <DashboardGrid {...this.props} />

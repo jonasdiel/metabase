@@ -43,16 +43,16 @@ export default class DeleteDashboardModal extends Component {
 
         return (
             <ModalContent
-                title="Delete Dashboard"
+                title="Apagar painel"
                 closeFn={this.props.onClose}
             >
                 <div className="Form-inputs mb4">
-                    <p>Are you sure you want to do this?</p>
+                    <p>Você tem certeza disso?</p>
                 </div>
 
                 <div className="Form-actions">
-                    <button className="Button Button--danger" onClick={() => this.deleteDashboard()}>Yes</button>
-                    <button className="Button Button--primary ml1" onClick={this.props.onClose}>No</button>
+                    <button className="Button Button--danger" onClick={() => this.deleteDashboard()}>Sim</button>
+                    <button className="Button Button--primary ml1" onClick={this.props.onClose}>Não</button>
                     {formError}
                 </div>
             </ModalContent>

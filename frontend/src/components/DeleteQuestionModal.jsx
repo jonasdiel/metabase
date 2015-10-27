@@ -45,19 +45,19 @@ export default class DeleteQuestionModal extends Component {
 
         return (
             <ModalContent
-                title="Delete Question"
+                title="Apagar Pergunta"
                 closeFn={this.props.closeFn}
             >
                 <div className="Form-inputs mb4">
-                    <p>Are you sure you want to do this?</p>
+                    <p>Você tem certeza disso?</p>
                     { this.props.card.dashboard_count > 0 ?
-                        <p>This question will be deleted from Metabase, and will also be removed from {dashboardCount}.</p>
+                        <p>Esta pergunta pode ser apagada do Metabase, e também será removida de {dashboardCount}.</p>
                     : null }
                 </div>
 
                 <div className="Form-actions">
-                    <button className="Button Button--danger" onClick={() => this.deleteCard()}>Yes</button>
-                    <button className="Button Button--primary ml1" onClick={this.props.closeFn}>No</button>
+                    <button className="Button Button--danger" onClick={() => this.deleteCard()}>Sim</button>
+                    <button className="Button Button--primary ml1" onClick={this.props.closeFn}>Não</button>
                     {formError}
                 </div>
             </ModalContent>

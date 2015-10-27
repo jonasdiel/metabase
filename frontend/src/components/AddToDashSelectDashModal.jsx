@@ -57,7 +57,7 @@ export default class AddToDashSelectDashModal extends Component {
         } else {
             return (
                 <ModalContent
-                    title="Add Question to Dashboard"
+                    title="Adicionar pergunta ao Painel"
                     closeFn={this.props.closeFn}
                 >
                     <SortableItemList

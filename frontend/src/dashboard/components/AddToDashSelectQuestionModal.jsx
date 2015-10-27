@@ -36,11 +36,11 @@ export default class AddToDashSelectQuestionModal extends Component {
     render() {
         var { error } = this.state;
         if (this.props.cards && this.props.cards.length === 0) {
-            error = { message: "No cards have been saved." };
+            error = { message: "Não existem perguntas salvas." };
         }
         return (
             <ModalContent
-                title="Add Question to Dashboard"
+                title="Adicionar pergunta ao Painel"
                 closeFn={this.props.onClose}
             >
                 <LoadingAndErrorWrapper loading={!this.props.cards} error={error} >

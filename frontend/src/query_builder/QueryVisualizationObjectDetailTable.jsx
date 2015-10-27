@@ -99,7 +99,7 @@ export default class QueryVisualizationObjectDetailTable extends Component {
         if (!this.props.tableForeignKeys) return false;
 
         if (this.props.tableForeignKeys.length < 1) {
-            return (<p className="my4 text-centered">No relationships found.</p>);
+            return (<p className="my4 text-centered">Nenhuma relação encontrada.</p>);
         }
 
         var component = this;

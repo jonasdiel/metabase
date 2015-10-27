@@ -78,6 +78,7 @@ export default class DashCard extends Component {
     }
 
     componentDidUpdate() {
+
         let titleElement = React.findDOMNode(this.refs.title);
         // have to restore the text in case we previously clamped it :-/
         titleElement.textContent = this.props.dashcard.card.name;
