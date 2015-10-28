@@ -31,7 +31,7 @@ export default class DatabaseDetailsForm extends Component {
         details: PropTypes.object,
         engine: PropTypes.string.isRequired,
         formError: PropTypes.object,
-        hiddenFields: PropTypes.array,
+        hiddenFields: PropTypes.object,
         submitButtonText: PropTypes.string.isRequired,
         submitFn: PropTypes.func.isRequired
     };
@@ -135,7 +135,11 @@ export default class DatabaseDetailsForm extends Component {
     }
 
     render() {
+<<<<<<< HEAD
         let { details, engine, formError, formSuccess, hiddenFields, submitButtonText } = this.props;
+=======
+        let { engine, formError, formSuccess, hiddenFields, submitButtonText } = this.props;
+>>>>>>> cdccdac37ccd6a4e652444f3b242e247b52747d3
         let { valid } = this.state;
 
         let fields = [
@@ -156,7 +160,11 @@ export default class DatabaseDetailsForm extends Component {
             <form onSubmit={this.formSubmitted.bind(this)} noValidate>
                 <div className="FormInputGroup">
                     { fields.filter(field => !hiddenFields[field.fieldName]).map((field, fieldIndex) =>
+<<<<<<< HEAD
                         <FormField fieldName={field.fieldName}>
+=======
+                        <FormField key={field.fieldName} fieldName={field.fieldName}>
+>>>>>>> cdccdac37ccd6a4e652444f3b242e247b52747d3
                             <FormLabel title={field.displayName} fieldName={field.fieldName}></FormLabel>
                             {this.renderFieldInput(field, fieldIndex)}
                             <span className="Form-charm"></span>
