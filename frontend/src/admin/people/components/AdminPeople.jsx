@@ -361,7 +361,7 @@ export default class AdminPeople extends Component {
 
                     <section className="pb4">
                         <table className="ContentTable">
-                            <thead style={{borderTop: "none"}}>
+                            <thead>
                                 <tr>
                                     <th>Nome</th>
                                     <th>E-mail</th>
