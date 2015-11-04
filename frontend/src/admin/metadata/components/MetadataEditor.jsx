@@ -83,7 +83,7 @@ export default class MetadataEditor extends Component {
         } else {
             content = (
                 <div className="flex flex-full layout-centered">
-                    <h2 className="text-grey-3">Select any table to see its schema and add or edit metadata.</h2>
+                    <h2 className="text-grey-3">Selecione alguma tabela para visualizar seus esquemas e adicionar ou editar seus metadados.</h2>
                 </div>
             );
         }
